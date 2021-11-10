@@ -23,5 +23,13 @@ return require('packer').startup(function()
   use 'morhetz/gruvbox'
   use 'rakr/vim-one'
 
-  -- TODO: https://github.com/SirVer/ultisnips
+  -- Completion
+  use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-cmdline'
+  use 'hrsh7th/cmp-nvim-lua'
+
+  use 'onsails/lspkind-nvim'
 end)
