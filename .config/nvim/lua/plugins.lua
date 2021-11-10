@@ -32,4 +32,10 @@ return require('packer').startup(function()
   use 'hrsh7th/cmp-nvim-lua'
 
   use 'onsails/lspkind-nvim'
+
+  use 'hrsh7th/vim-vsnip'
+  use 'hrsh7th/vim-vsnip-integ'
+  use 'hrsh7th/cmp-vsnip'
+
+  use 'bfredl/nvim-luadev'
 end)
