@@ -38,4 +38,9 @@ return require('packer').startup(function()
   use 'hrsh7th/cmp-vsnip'
 
   use 'bfredl/nvim-luadev'
+
+  use {
+    'lewis6991/gitsigns.nvim',
+    requires = 'nvim-lua/plenary.nvim'
+  }
 end)

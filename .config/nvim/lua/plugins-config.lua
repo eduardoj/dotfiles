@@ -161,3 +161,5 @@ nvim_lsp.solargraph.setup{
   },
   on_attach = on_attach,
 }
+
+require('gitsigns').setup()
