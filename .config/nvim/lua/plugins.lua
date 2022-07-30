@@ -20,7 +20,8 @@ return require('packer').startup(function()
 
   -- Color schemes
   use 'arcticicestudio/nord-vim'
-  use 'morhetz/gruvbox'
+  -- use 'morhetz/gruvbox' -- Obsolete
+  use { 'ellisonleao/gruvbox.nvim' }
   use 'rakr/vim-one'
 
   -- Completion

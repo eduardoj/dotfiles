@@ -1,14 +1,19 @@
 vim.opt.autoindent = true
-vim.opt.background = 'dark'
 vim.opt.expandtab = true
 vim.opt.incsearch = true
 vim.opt.number = true
 vim.opt.smartindent = true
+
+
 vim.opt.termguicolors = true
-
-vim.cmd('colorscheme gruvbox')
-
+-- gruvbox
+-- vim.opt.background = 'dark' -- or "light" for light mode
 vim.g.gruvbox_contrast_dark = 'hard'
+vim.cmd([[colorscheme gruvbox]])
+
+-- one
+--vim.opt.background = 'dark'
+--vim.cmd('colorscheme one')
 
 local indent = 2
 vim.opt.shiftwidth = indent
