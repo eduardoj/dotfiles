@@ -21,7 +21,7 @@ vim.opt.completeopt = 'menuone,noselect'
 -- Used by :checkhealth
 vim.g.python3_host_prog = '/usr/bin/python3.9'
 
-vim.g.ruby_host_prog = '/usr/bin/neovim-ruby-host.ruby2.7'
+vim.g.ruby_host_prog = '/usr/bin/neovim-ruby-host.ruby3.1'
 
 vim.env.PERL_MB_OPT = "--install_base \"~/perl5\""
 vim.env.PERL_MM_OPT = "INSTALL_BASE=~/perl5"
