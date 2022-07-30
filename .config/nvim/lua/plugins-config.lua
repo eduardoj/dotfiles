@@ -19,7 +19,11 @@ require('telescope').load_extension('fzf')
 require('nvim-treesitter.configs').setup {
   ensure_installed = { "bash", "css", "dockerfile", "html", "javascript", "json",
                         "lua", "perl", "regex", "ruby", "vim", "yaml" }, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-  highlight = { enable = true },
+  highlight = {
+    enable = true,
+    -- Disable perl syntax: it doesn't work well with huge files
+    --disable = { 'perl' },
+  },
   incremental_selection = { enable = true },
   textobjects = { enable = true },
 }
@@ -121,7 +125,7 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 end
 
--- perlpls requires the `pls` executable: `cpan> install PLS`
+-- perlpls requires: `cpanm -n PLS::Server`
 nvim_lsp.perlpls.setup{}
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
@@ -133,7 +137,12 @@ for _, lsp in ipairs(servers) do
     flags = {
       debounce_text_changes = 150,
     },
-    capabilities = capabilities
+    capabilities = capabilities,
+    settings = {
+      perl = {
+        inc = { './src/backend', './src/backend/build', './src/backend/t/lib', },
+      }
+    }
   }
 end
 

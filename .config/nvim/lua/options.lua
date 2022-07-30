@@ -18,7 +18,8 @@ vim.cmd([[colorscheme gruvbox]])
 local indent = 2
 vim.opt.shiftwidth = indent
 vim.opt.softtabstop = indent
-vim.opt.tabstop = indent
+-- Perl files keep 8 spaces for tabs
+-- vim.opt.tabstop = indent
 
 -- Set completeopt to have a better completion experience
 vim.opt.completeopt = 'menuone,noselect'
