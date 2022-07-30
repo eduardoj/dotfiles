@@ -46,4 +46,6 @@ return require('packer').startup(function()
   }
 
   use 'ethanholz/nvim-lastplace'
+
+  use 'numToStr/Comment.nvim'
 end)
