@@ -172,3 +172,5 @@ nvim_lsp.solargraph.setup{
 }
 
 require('gitsigns').setup()
+
+require('nvim-lastplace').setup()
