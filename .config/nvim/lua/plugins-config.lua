@@ -15,6 +15,12 @@
 
 require('telescope').load_extension('fzf')
 
+-- https://tuckerchapman.com/2018/06/16/how-to-use-the-vim-leader-key/
+-- https://vonheikemen.github.io/devlog/tools/configuring-neovim-using-lua/
+vim.api.nvim_set_keymap('n', '<Leader>ff', "<cmd>lua require('telescope.builtin').find_files()<CR>", {noremap = true})
+vim.api.nvim_set_keymap('n', '<Leader>fg', "<cmd>lua require('telescope.builtin').live_grep()<CR>", {noremap = true})
+vim.api.nvim_set_keymap('n', '<Leader>fb', "<cmd>lua require('telescope.builtin').buffers()<CR>", {noremap = true})
+vim.api.nvim_set_keymap('n', '<Leader>fh', "<cmd>lua require('telescope.builtin').help_tags()<CR>", {noremap = true})
 
 require('nvim-treesitter.configs').setup {
   ensure_installed = { "bash", "css", "dockerfile", "html", "javascript", "json",
