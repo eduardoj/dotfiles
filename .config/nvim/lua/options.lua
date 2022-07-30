@@ -1,8 +1,18 @@
 vim.opt.autoindent = true
 vim.opt.expandtab = true
 vim.opt.incsearch = true
-vim.opt.number = true
+vim.opt.showmatch = true -- show matching brackets when text indicator is over them
+vim.opt.mouse = 'a' -- Enable mouse for all modes
+vim.opt.clipboard = "unnamedplus"
+-- vim.opt.relativenumber = true -- Show line numbers...
+vim.opt.number = true -- ... but show the actual number for the line we're on
+vim.opt.ignorecase = true -- Ignore case when searching...
+vim.opt.smartcase = true -- ... unless there is a capital letter in the query
 vim.opt.smartindent = true
+vim.opt.scrolloff = 10 -- Make it so there are always ten lines below my cursor
+vim.opt.splitright = true -- Prefer windows splitting to the right
+vim.opt.splitbelow = true -- Prefer windows splitting to the bottom
+vim.opt.laststatus = 3 -- Add global statusline
 
 
 vim.opt.termguicolors = true
