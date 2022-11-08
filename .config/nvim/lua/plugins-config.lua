@@ -25,7 +25,7 @@ vim.api.nvim_set_keymap('n', '<Leader>fo', "<cmd>Telescope oldfiles<CR>", {norem
 vim.api.nvim_set_keymap('n', '<Leader>fd', "<cmd>Telescope diagnostics<CR>", {noremap = true})
 
 require('nvim-treesitter.configs').setup {
-  ensure_installed = { "bash", "css", "dockerfile", "html", "javascript", "json",
+  ensure_installed = { "bash", "css", "dockerfile", "go", "html", "javascript", "json",
                         "lua", "perl", "regex", "ruby", "vim", "yaml" }, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   highlight = {
     enable = true,
@@ -133,12 +133,17 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 end
 
+-- gopls requires: `go install golang.org/x/tools/gopls@latest`
+-- nvim_lsp.gopls.setup{}
+-- Commented. Done in the loop below.
+
 -- perlpls requires: `cpanm -n PLS::Server`
-nvim_lsp.perlpls.setup{}
+-- nvim_lsp.perlpls.setup{}
+-- Commented. Done in the loop below.
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'perlpls', 'solargraph' }
+local servers = { 'gopls', 'perlpls', 'solargraph' }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
