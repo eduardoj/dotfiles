@@ -30,7 +30,7 @@ require('nvim-treesitter.configs').setup {
   highlight = {
     enable = true,
     -- Disable perl syntax: it doesn't work well with huge files
-    --disable = { 'perl' },
+    disable = { 'perl' },
   },
   incremental_selection = { enable = true },
   textobjects = { enable = true },
