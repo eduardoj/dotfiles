@@ -13,6 +13,7 @@ vim.opt.scrolloff = 10 -- Make it so there are always ten lines below my cursor
 vim.opt.splitright = true -- Prefer windows splitting to the right
 vim.opt.splitbelow = true -- Prefer windows splitting to the bottom
 vim.opt.laststatus = 3 -- Add global statusline
+vim.opt.cmdheight = 0 -- Hide the command line and gain an extra line
 
 
 vim.opt.termguicolors = true
