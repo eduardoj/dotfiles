@@ -12,6 +12,9 @@ return require('packer').startup(function()
 
   -- /Telescope extensions
 
+  -- Icons for Telescope
+  use 'nvim-tree/nvim-web-devicons'
+
   -- use 'gfanto/fzf-lsp.nvim'
 
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
