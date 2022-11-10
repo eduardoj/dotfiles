@@ -15,14 +15,14 @@
 
 require('telescope').load_extension('fzf')
 
--- https://tuckerchapman.com/2018/06/16/how-to-use-the-vim-leader-key/
--- https://vonheikemen.github.io/devlog/tools/configuring-neovim-using-lua/
-vim.api.nvim_set_keymap('n', '<Leader>ff', "<cmd>Telescope find_files<CR>", {noremap = true})
-vim.api.nvim_set_keymap('n', '<Leader>fg', "<cmd>Telescope live_grep<CR>", {noremap = true})
-vim.api.nvim_set_keymap('n', '<Leader>fb', "<cmd>Telescope buffers<CR>", {noremap = true})
-vim.api.nvim_set_keymap('n', '<Leader>fh', "<cmd>Telescope help_tags<CR>", {noremap = true})
-vim.api.nvim_set_keymap('n', '<Leader>fo', "<cmd>Telescope oldfiles<CR>", {noremap = true})
-vim.api.nvim_set_keymap('n', '<Leader>fd', "<cmd>Telescope diagnostics<CR>", {noremap = true})
+-- https://github.com/nvim-telescope/telescope.nvim#usage
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+vim.keymap.set('n', '<leader>fo', builtin.oldfiles, {})
+vim.keymap.set('n', '<leader>fd', builtin.diagnostics, {})
 
 require('nvim-web-devicons').setup {
  -- your personnal icons can go here (to override)
