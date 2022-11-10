@@ -164,9 +164,13 @@ end
 -- nvim_lsp.perlpls.setup{}
 -- Commented. Done in the loop below.
 
+-- sumneko_lua requires: `zypper in lua-language-server`
+-- nvim_lsp.sumneko_lua.setup{}
+-- Commented. Done in the loop below.
+
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'gopls', 'perlpls', 'solargraph' }
+local servers = { 'gopls', 'perlpls', 'solargraph', 'sumneko_lua' }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
