@@ -12,6 +12,28 @@
 --   }
 -- }
 
+require('telescope').setup {
+  defaults = {
+    vimgrep_arguments = {
+      -- Defaults
+      'rg',
+      '--color=never',
+      '--no-heading',
+      '--with-filename',
+      '--line-number',
+      '--column',
+      '--smart-case',
+      -- Custom
+      '--hidden',
+      '--glob', '!**/.git/*',
+    },
+  },
+  pickers = {
+    find_files = {
+      find_command = { 'rg', '--files', '--hidden', '--glob', '!**/.git/*' },
+    }
+  }
+}
 
 require('telescope').load_extension('fzf')
 
