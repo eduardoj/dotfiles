@@ -193,6 +193,7 @@ end
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
 local servers = { 'gopls', 'perlpls', 'solargraph', 'sumneko_lua' }
+-- local servers = { 'gopls', 'perlpls', 'ruby_ls', 'sumneko_lua' }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
@@ -232,6 +233,16 @@ nvim_lsp.solargraph.setup{
   },
   on_attach = on_attach,
 }
+
+-- nvim_lsp.ruby_ls.setup{
+--   cmd = { 'bundle', 'exec', 'ruby-lsp' },
+--   -- root_dir = util.root_pattern('Gemfile', '.git'),
+--   root_dir = util.root_pattern('Gemfile'),
+--   enabledFeatures = { "codeActions", "diagnostics", "documentHighlights", "documentSymbols", "formatting", "inlayHint" },
+--   -- enabledFeatures = { 'diagnostics' },
+--   cmd_cwd = os.getenv('HOME')..'/github/open-build-service/src/api',
+--   on_attach = on_attach,
+-- }
 
 require('gitsigns').setup()
 
