@@ -130,6 +130,17 @@ vim.cmd([[colorscheme gruvbox]])
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
 
+-- Prevent WARNING:  Can't write to /usr/lib/perl5/site_perl/5.36.0 and /usr/bin: Installing modules to /home/eduardo/perl5
+-- cpanm --local-lib=~/perl5 local::lib && eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
+vim.env.PERL_MB_OPT = "--install_base \"~/perl5\""
+vim.env.PERL_MM_OPT = "INSTALL_BASE=~/perl5"
+
+-- Set path to Python provider
+vim.g.python3_host_prog = '/usr/bin/python3.10'
+
+-- Set path to Ruby provider, installed with `sudo gem install neovim`
+vim.g.ruby_host_prog = '/usr/bin/neovim-ruby-host.ruby3.1'
+
 -- [[ Basic Keymaps ]]
 -- Set <space> as the leader key
 -- See `:help mapleader`
