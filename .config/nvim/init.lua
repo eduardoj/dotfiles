@@ -134,7 +134,7 @@ vim.g.maplocalleader = ' '
 
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
-vim.keymap.set({ 'n', '' }, '<Space>', '<Nop>', { silent = true })
+vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
@@ -221,7 +221,8 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'typescript', 'help', 'vim' },
+  ensure_installed = { 'bash', 'css', 'dockerfile', 'go', 'help', 'html', 'javascript', 'json',
+                       'lua', 'perl', 'python', 'regex', 'ruby', 'vim', 'yaml' }, -- one of 'all', 'maintained' (parsers with maintainers), or a list of languages
 
   highlight = { enable = true },
   indent = { enable = true, disable = { 'python' } },
@@ -338,10 +339,13 @@ end
 --  the `settings` field of the server config. You must look up that documentation yourself.
 local servers = {
   -- clangd = {},
-  -- gopls = {},
+  gopls = {},
   -- pyright = {},
   -- rust_analyzer = {},
   -- tsserver = {},
+
+  perlnavigator = {},
+  solargraph = {},
 
   sumneko_lua = {
     Lua = {
