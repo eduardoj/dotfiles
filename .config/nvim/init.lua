@@ -365,7 +365,9 @@ local servers = {
       includePaths = { './src/backend', './src/backend/build', './src/backend/t/lib', },
     }
   },
-  solargraph = {},
+
+  -- solargraph is configured below, in "Specific configuration"
+  -- solargraph = {},
 
   sumneko_lua = {
     Lua = {
@@ -400,6 +402,34 @@ mason_lspconfig.setup_handlers {
       settings = servers[server_name],
     }
   end,
+}
+
+-- Specific configuration for language servers
+local nvim_lsp = require('lspconfig')
+local util = require('lspconfig.util')
+
+nvim_lsp.solargraph.setup {
+  -- cmd = { 'solargraph', 'stdio' },
+  cmd = { 'bundle', 'exec', 'solargraph', 'stdio' },
+  filetypes = { 'ruby' },
+  init_options = {
+    formatting = true
+  },
+  -- root_dir = util.root_pattern('.git'),
+  root_dir = util.root_pattern('Gemfile'),
+  -- TODO: make retrieving this path dynamically
+  -- cmd_cwd = util.root_pattern('Gemfile'),
+  cmd_cwd = os.getenv('HOME')..'/github/open-build-service/src/api',
+  settings = {
+    solargraph = {
+      diagnostics = true,
+      -- logLevel = 'info',
+      -- logLevel = 'debug',
+      -- useBundler = true,
+      -- bundlerPath = '/usr/bin/bundle'
+    }
+  },
+  on_attach = on_attach,
 }
 
 -- Turn on lsp status information
