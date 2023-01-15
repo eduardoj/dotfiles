@@ -26,6 +26,13 @@ vim.cmd([[colorscheme gruvbox]])
 --vim.opt.background = 'dark'
 --vim.cmd('colorscheme one')
 
+-- Transparent background: https://www.youtube.com/watch?v=w7i4amO_zaE
+-- vim.api.nvim_set_hl(0, "Normal", { bg = "none", fg = 'fg' })
+-- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none", fg = 'fg' })
+-- vim.api.nvim_set_hl(0, "WinSeparator", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "StatusLine", { bg = "none" })
+
 local indent = 2
 vim.opt.shiftwidth = indent
 vim.opt.softtabstop = indent
