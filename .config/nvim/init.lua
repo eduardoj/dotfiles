@@ -360,7 +360,11 @@ local servers = {
   -- rust_analyzer = {},
   -- tsserver = {},
 
-  perlnavigator = {},
+  perlnavigator = {
+    perlnavigator = {
+      includePaths = { './src/backend', './src/backend/build', './src/backend/t/lib', },
+    }
+  },
   solargraph = {},
 
   sumneko_lua = {
