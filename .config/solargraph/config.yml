@@ -1,0 +1,42 @@
+---
+include:
+- "**/*.rb"
+exclude:
+- spec/cassettes/**/*
+- spec/components/**/*
+- spec/controllers/**/*
+- spec/db/**/*
+- spec/factories/**/*
+- spec/features/**/*
+- spec/fixtures/**/*
+- spec/helpers/**/*
+- spec/jobs/**/*
+- spec/lib/**/*
+- spec/mailers/**/*
+- spec/mixins/**/*
+- spec/models/**/*
+- spec/policies/**/*
+- spec/queries/**/*
+- spec/requests/**/*
+- spec/services/**/*
+- spec/routing/**/*
+- spec/validators/**/*
+- test/**/*
+- vendor/**/*
+- ".bundle/**/*"
+require: []
+domains: []
+reporters:
+- rubocop
+- require_not_found
+formatter:
+  rubocop:
+    cops: safe
+    except: []
+    only: []
+    extra_args: []
+require_paths:
+- lib
+- spec
+plugins: []
+max_files: 5000

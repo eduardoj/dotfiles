@@ -11,3 +11,7 @@
 !.config/nvim/**/*
 # Ignore neovim config plugins
 .config/nvim/plugin
+
+# Don't ignore solargraph config
+!.config/solargraph
+!.config/solargraph/**/*
