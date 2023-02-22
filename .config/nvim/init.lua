@@ -85,7 +85,12 @@ require('lazy').setup({
   { --
     'ellisonleao/gruvbox.nvim',
     priority = 1000,
-    config = function()
+    opts = {
+      -- contrast = 'hard',
+      transparent_mode = true,
+    },
+    config = function(_, opts)
+      require('gruvbox').setup(opts)
       vim.cmd.colorscheme 'gruvbox'
     end,
   },
@@ -197,12 +202,6 @@ vim.wo.signcolumn = 'yes'
 vim.o.updatetime = 250
 vim.o.timeout = true
 vim.o.timeoutlen = 300
-
--- vim.cmd [[colorscheme onedark]]
--- gruvbox
--- vim.opt.background = 'dark' -- or "light" for light mode
-vim.g.gruvbox_contrast_dark = 'hard'
--- vim.cmd([[colorscheme gruvbox]])
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
