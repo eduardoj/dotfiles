@@ -9,8 +9,6 @@
 !/.config
 !.config/nvim
 !.config/nvim/**/*
-# Ignore neovim config plugins
-.config/nvim/lazy-lock.json
 
 # Don't ignore solargraph config
 !.config/solargraph
