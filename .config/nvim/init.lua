@@ -446,6 +446,7 @@ local servers = {
   -- pyright = {},
   -- rust_analyzer = {},
   -- tsserver = {},
+  -- html = { filetypes = { 'html', 'twig', 'hbs'} },
 
   perlnavigator = {
     perlnavigator = {
@@ -483,8 +484,9 @@ mason_lspconfig.setup_handlers {
       capabilities = capabilities,
       on_attach = on_attach,
       settings = servers[server_name],
+      filetypes = (servers[server_name] or {}).filetypes,
     }
-  end,
+  end
 }
 
 -- Specific configuration for language servers
@@ -518,10 +520,9 @@ nvim_lsp.solargraph.setup {
 -- [[ Configure nvim-cmp ]]
 -- See `:help cmp`
 local cmp = require 'cmp'
+local lspkind = require('lspkind')
 local luasnip = require 'luasnip'
 require('luasnip.loaders.from_vscode').lazy_load()
-local lspkind = require('lspkind')
-
 luasnip.config.setup {}
 
 cmp.setup {
