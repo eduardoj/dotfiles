@@ -252,6 +252,11 @@ vim.o.completeopt = 'menuone,noselect'
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
 
+-- Set folding with treesitter
+vim.o.foldmethod = "expr"
+vim.o.foldexpr = "nvim_treesitter#foldexpr()"
+vim.o.foldenable = false -- Disable folding at startup
+
 -- Prevent WARNING:  Can't write to /usr/lib/perl5/site_perl/5.36.0 and /usr/bin: Installing modules to /home/eduardo/perl5
 -- cpanm --local-lib=~/perl5 local::lib && eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
 vim.env.PERL_MB_OPT = "--install_base \"~/perl5\""
