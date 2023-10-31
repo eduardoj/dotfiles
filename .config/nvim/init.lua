@@ -263,7 +263,7 @@ vim.env.PERL_MB_OPT = "--install_base \"~/perl5\""
 vim.env.PERL_MM_OPT = "INSTALL_BASE=~/perl5"
 
 -- Set path to Python provider
-vim.g.python3_host_prog = '/usr/bin/python3.10'
+vim.g.python3_host_prog = '/usr/bin/python3.11'
 
 -- Set path to Ruby provider, installed with `sudo gem install neovim`
 vim.g.ruby_host_prog = '/usr/bin/neovim-ruby-host.ruby3.2'
