@@ -157,7 +157,7 @@ vim.env.PERL_MM_OPT = 'INSTALL_BASE=~/perl5'
 vim.g.python3_host_prog = '/usr/bin/python3.11'
 
 -- Set path to Ruby provider, installed with `sudo gem install neovim`
-vim.g.ruby_host_prog = '/usr/bin/neovim-ruby-host.ruby3.2'
+vim.g.ruby_host_prog = '/usr/bin/neovim-ruby-host.ruby3.3'
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
@@ -532,6 +532,9 @@ require('lazy').setup {
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
+      -- Needed for solargraph LSP configuration
+      local util = require 'lspconfig.util'
+
       -- Enable the following language servers
       --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
       --
@@ -586,6 +589,28 @@ require('lazy').setup {
           settings = {
             perlnavigator = {
               includePaths = { './src/backend', './src/backend/build', './src/backend/t/lib' },
+            },
+          },
+        },
+
+        solargraph = {
+          -- cmd = { 'solargraph', 'stdio' },
+          cmd = { 'bundle', 'exec', 'solargraph', 'stdio' },
+          filetypes = { 'ruby' },
+          init_options = {
+            formatting = true,
+          },
+          root_dir = util.root_pattern 'Gemfile',
+          -- TODO: make retrieving this path dynamically
+          -- cmd_cwd = util.root_pattern('Gemfile'),
+          cmd_cwd = os.getenv 'HOME' .. '/github/open-build-service/src/api',
+          settings = {
+            solargraph = {
+              diagnostics = true,
+              -- logLevel = 'info',
+              -- logLevel = 'debug',
+              -- useBundler = true,
+              -- bundlerPath = '/usr/bin/bundle'
             },
           },
         },
