@@ -581,6 +581,14 @@ require('lazy').setup {
             },
           },
         },
+
+        perlnavigator = {
+          settings = {
+            perlnavigator = {
+              includePaths = { './src/backend', './src/backend/build', './src/backend/t/lib' },
+            },
+          },
+        },
       }
 
       -- Ensure the servers and tools above are installed
