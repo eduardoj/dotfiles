@@ -165,7 +165,7 @@ vim.env.PERL_MM_OPT = 'INSTALL_BASE=~/perl5'
 vim.g.python3_host_prog = '/usr/bin/python3.11'
 
 -- Set path to Ruby provider, installed with `sudo gem install neovim`
-vim.g.ruby_host_prog = '/usr/bin/neovim-ruby-host.ruby3.3'
+vim.g.ruby_host_prog = '/usr/bin/neovim-ruby-host.ruby3.4'
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
@@ -458,11 +458,10 @@ require('lazy').setup({
     opts = {
       library = {
         -- Load luvit types when the `vim.uv` word is found
-        { path = 'luvit-meta/library', words = { 'vim%.uv' } },
+        { path = '${3rd}/luv/library', words = { 'vim%.uv' } },
       },
     },
   },
-  { 'Bilal2453/luvit-meta', lazy = true },
   {
     -- Main LSP Configuration
     'neovim/nvim-lspconfig',
@@ -475,7 +474,6 @@ require('lazy').setup({
       'WhoIsSethDaniel/mason-tool-installer.nvim',
 
       -- Useful status updates for LSP.
-      -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
       { 'j-hui/fidget.nvim', opts = {} },
 
       -- Allows extra capabilities provided by nvim-cmp
