@@ -156,6 +156,11 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
+-- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
+-- instead raise a dialog asking if you wish to save the current file(s)
+-- See `:help 'confirm'`
+vim.opt.confirm = true
+
 -- Prevent WARNING:  Can't write to /usr/lib/perl5/site_perl/5.36.0 and /usr/bin: Installing modules to /home/eduardo/perl5
 -- cpanm --local-lib=~/perl5 local::lib && eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
 vim.env.PERL_MB_OPT = '--install_base "~/perl5"'
