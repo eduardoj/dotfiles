@@ -10,6 +10,5 @@
 !.config/nvim
 !.config/nvim/**/*
 
-# Don't ignore solargraph config
-!.config/solargraph
-!.config/solargraph/**/*
+# Don't ignore local bin scripts
+!.local/bin/obs_budle_development.sh

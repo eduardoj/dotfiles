@@ -664,9 +664,6 @@ require('lazy').setup({
       --  So, we create new capabilities with blink.cmp, and then broadcast that to the servers.
       local capabilities = require('blink.cmp').get_lsp_capabilities()
 
-      -- Needed for solargraph LSP configuration
-      local util = require 'lspconfig.util'
-
       -- Enable the following language servers
       --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
       --
@@ -713,27 +710,9 @@ require('lazy').setup({
           },
         },
 
-        solargraph = {
-          -- cmd = { 'solargraph', 'stdio' },
-          cmd = { 'bundle', 'exec', 'solargraph', 'stdio' },
-          filetypes = { 'ruby' },
-          init_options = {
-            formatting = true,
-          },
-          root_dir = util.root_pattern 'Gemfile',
-          -- TODO: make retrieving this path dynamically
-          -- cmd_cwd = util.root_pattern('Gemfile'),
-          cmd_cwd = os.getenv 'HOME' .. '/github/open-build-service/src/api',
-          settings = {
-            solargraph = {
-              diagnostics = true,
-              -- logLevel = 'info',
-              -- logLevel = 'debug',
-              -- useBundler = true,
-              -- bundlerPath = '/usr/bin/bundle'
-            },
-          },
-        },
+        ruby_lsp = {
+          cmd = { 'bundle', 'exec', 'ruby-lsp' },
+        }
       }
 
       -- Ensure the servers and tools above are installed
