@@ -11,4 +11,6 @@
 !.config/nvim/**/*
 
 # Don't ignore local bin scripts
-!.local/bin/obs_budle_development.sh
+!.local
+!.local/bin
+!.local/bin/obs_bundle_development.sh
