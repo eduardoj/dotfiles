@@ -712,6 +712,13 @@ require('lazy').setup({
 
         ruby_lsp = {
           cmd = { 'bundle', 'exec', 'ruby-lsp' },
+          init_options = {
+            addonSettings = {
+              ["Ruby LSP Rails"] = {
+                enablePendingMigrationsPrompt = false,
+              },
+            },
+          },
         }
       }
 
