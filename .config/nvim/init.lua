@@ -229,6 +229,18 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- RuboCop
+-- https://docs.rubocop.org/rubocop/usage/lsp.html#neovim-nvim-lspconfig
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "ruby",
+  callback = function()
+    vim.lsp.start {
+      name = "rubocop",
+      cmd = { "bundle", "exec", "rubocop", "--lsp" },
+    }
+  end,
+})
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
