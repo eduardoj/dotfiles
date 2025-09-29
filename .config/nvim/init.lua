@@ -927,9 +927,7 @@ require('lazy').setup({
     config = function()
       ---@diagnostic disable-next-line: missing-fields
       require('gruvbox').setup {
-        styles = {
-          comments = { italic = false }, -- Disable italics in comments
-        },
+        transparent_mode = true,
       }
 
       -- Load the colorscheme here.

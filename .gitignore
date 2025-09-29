@@ -5,8 +5,13 @@
 !/.gitignore
 !/LICENSE
 
-# Don't ignore neovim config
 !/.config
+
+# Don't ignore ghostty config
+!.config/ghostty
+!.config/ghostty/**/*
+
+# Don't ignore neovim config
 !.config/nvim
 !.config/nvim/**/*
 
