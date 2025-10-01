@@ -26,7 +26,7 @@
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
 
-background-opacity = 0.97
+background-opacity = 0.95
 font-family = Hack
-font-size = 14
+font-size = 12
 theme = GruvboxDark
