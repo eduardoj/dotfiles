@@ -173,7 +173,7 @@ vim.env.PERL_MM_OPT = 'INSTALL_BASE=~/perl5'
 vim.g.python3_host_prog = '/usr/bin/python3.13'
 
 -- Set path to Ruby provider, installed with `sudo gem install neovim`
-vim.g.ruby_host_prog = '/usr/bin/neovim-ruby-host.ruby3.4'
+vim.g.ruby_host_prog = '/usr/bin/neovim-ruby-host.ruby4.0'
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
