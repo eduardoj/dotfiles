@@ -35,11 +35,23 @@ return {
     --     },
     --   },
     -- },
+    acp_providers = {
+      ["gemini-cli"] = {
+        command = "gemini",
+        args = { "--experimental-acp" },
+        env = {
+          NODE_NO_WARNINGS = "1",
+          GEMINI_API_KEY = os.getenv("AVANTE_GEMINI_API_KEY"),
+        },
+        auth_method = "gemini-api-key",
+      },
+    },
     provider = "gemini",
     providers = {
       gemini = {
         endpoint = "https://generativelanguage.googleapis.com/v1beta/models",
-        model = "gemini-2.5-flash",
+        -- model = "gemini-2.5-flash",
+        model = "gemini-2.5-flash-lite",
         timeout = 30000, -- Timeout in milliseconds
         context_window = 1048576,
         use_ReAct_prompt = true,
