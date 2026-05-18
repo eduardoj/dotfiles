@@ -4,6 +4,7 @@ vim.pack.add { 'https://github.com/mfussenegger/nvim-lint' }
 
 local lint = require 'lint'
 lint.linters_by_ft = {
+  go = { 'golangcilint' },
   markdown = { 'markdownlint' }, -- Make sure to install `markdownlint` via mason / npm
 }
 
